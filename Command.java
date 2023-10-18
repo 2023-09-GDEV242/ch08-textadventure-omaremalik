@@ -13,8 +13,8 @@
  *
  * If the command had only one word, then the second word is <null>.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @author  Omar Malik
+ * @version 2023.10.18
  */
 
 public class Command
@@ -68,5 +68,15 @@ public class Command
     {
         return (secondWord != null);
     }
+    
+    /**
+     * Execute the "look" command to print the description of the current room.
+     * @param currentRoom The current room in the game.
+     */
+    public void executeLook(Room currentRoom)
+    {
+    System.out.println(currentRoom.getLongDescription());
+    }
+
 }
 
