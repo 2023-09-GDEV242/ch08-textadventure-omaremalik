@@ -77,6 +77,15 @@ public class Command
     {
     System.out.println(currentRoom.getLongDescription());
     }
-
+    
+    /**
+     * Execute the "eat" command, allowing the player to consume items or food in the game.
+     * This method handles the player's request to eat something and provides 
+     * an appropriate response.
+     */
+    public void executeEat() {
+    // Add logic here for eating, for example:
+    System.out.println("You have eaten something dirty.");
+    }
 }
 

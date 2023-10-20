@@ -121,7 +121,11 @@ public class Game
             } else {
                 System.out.println(currentRoom.getLongDescription());
             }
-            break;    
+            break;
+            
+            case EAT:
+                command.executeEat();
+                break;
 
             case QUIT:
                 wantToQuit = quit(command);
@@ -142,7 +146,6 @@ public class Game
         System.out.println("You are lost. You are alone. You wander");
         System.out.println("around at the university.");
         System.out.println();
-        System.out.println("Your command words are:");
         parser.showCommands();
     }
 
