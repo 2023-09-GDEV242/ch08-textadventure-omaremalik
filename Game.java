@@ -48,17 +48,17 @@ public class Game
         outside.setExit("south", lab);
         outside.setExit("west", pub);
         
-        Item map = new Item("Map of the campus", 0.5);
+        Item map = new Item("Map of the campus", "A detailed map of the university campus.", 0.5);
         outside.addItem(map);
         
-        Item ring = new Item("Enchanted Ring", 0.5);
+        Item ring = new Item("Enchanted Ring", "A mysterious ring with a glow to it", 0.5);
         outside.addItem(ring);
         
         // Creates a "Wooden Sword" item and associate it with the "theater" room
-        Item woodenSword = new Item("Wooden Sword", 2.0);
-        theater.addItem(woodenSword);
+        Item woodSword = new Item("Wood Sword", "A simple wooden sword", 3.0);
+        theater.addItem(woodSword);
         
-        Item fakeGun = new Item("Fake Gun", 2.0);
+        Item fakeGun = new Item("Fake Gun","A toy gun that looks real.", 2.0);
         theater.addItem(fakeGun);
         
         theater.setExit("west", outside);

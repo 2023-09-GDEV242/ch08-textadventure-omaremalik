@@ -16,7 +16,7 @@ public class Item {
      * @param description The description of the item.
      * @param weight The weight of the item in kilograms.
      */
-    public Item(String description, double weight) {
+    public Item(String name, String description, double weight) {
         this.name = name;
         this.description = description;
         this.weight = weight;
