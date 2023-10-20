@@ -48,15 +48,17 @@ public class Game
         outside.setExit("south", lab);
         outside.setExit("west", pub);
 
+        outside.addItem(new Item("Map of the campus", 0.5)); // Use addItem to add items
+        outside.addItem(new Item("Enchanted Ring", 0.2));
+        // Creates a "Wooden Sword" item and associate it with the "theater" room
+        Item woodenSword = new Item("Wooden Sword", 2.0);
+        theater.addItem(woodenSword);
+        
         theater.setExit("west", outside);
-
         pub.setExit("east", outside);
-
         lab.setExit("north", outside);
         lab.setExit("east", office);
-
         office.setExit("west", lab);
-
         currentRoom = outside;  // start game outside
     }
 
@@ -74,6 +76,7 @@ public class Game
         while (! finished) {
             Command command = parser.getCommand();
             finished = processCommand(command);
+            System.out.println(currentRoom.getLongDescription());
         }
         System.out.println("Thank you for playing.  Good bye.");
     }
@@ -88,6 +91,7 @@ public class Game
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
+        System.out.println(currentRoom.getLongDescription());
         System.out.println(currentRoom.getLongDescription());
     }
 
