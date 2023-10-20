@@ -6,7 +6,8 @@
  * @version 2023.10.20
  */
 public class Item {
-    private String description;
+    private String name;
+    private String description; // Added a description field
     private double weight;
 
     /**
@@ -16,10 +17,20 @@ public class Item {
      * @param weight The weight of the item in kilograms.
      */
     public Item(String description, double weight) {
+        this.name = name;
         this.description = description;
         this.weight = weight;
     }
 
+    /**
+     * Get the name of the item.
+     * @return The name of the item.
+     */
+    public String getName()
+    {
+        return name;
+    }
+    
     /**
      * Get the description of the item.
      *
