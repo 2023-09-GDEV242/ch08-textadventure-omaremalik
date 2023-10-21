@@ -57,15 +57,26 @@ public class Parser
         if (word1.equalsIgnoreCase("look")) {
         return new Command(CommandWord.LOOK, null);
         }
+        
+        // Handle new commands for the trap door
+        if (word1.equalsIgnoreCase("open") && word2.equalsIgnoreCase("trapdoor"))
+        {
+            return new Command(CommandWord.OPEN_TRAPDOOR, null);
+        }
 
+        if (word1.equalsIgnoreCase("close") && word2.equalsIgnoreCase("trapdoor"))
+        {
+            return new Command(CommandWord.CLOSE_TRAPDOOR, null);
+        }
+        
         return new Command(commands.getCommandWord(word1), word2);
     }
 
     /**
      * Print out a list of valid command words.
      */
-    public void showCommands()
-    {
-        commands.showAll();
+    public void showCommands() {
+    commands.showAll();
     }
+
 }

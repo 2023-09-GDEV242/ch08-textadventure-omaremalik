@@ -22,6 +22,7 @@ public class Room
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
     private List<Item> items; // Use a List to store multiple items
+    private TrapDoor trapDoor; // A one-way trap door
     
     /**
      * Create a room described "description". Initially, it has
@@ -34,6 +35,7 @@ public class Room
         this.description = description;
         exits = new HashMap<>();
         items = new ArrayList<>(); // Initialize the collection
+        trapDoor = new TrapDoor();
     }
 
     /**
@@ -47,6 +49,32 @@ public class Room
     }
 
     /**
+     * Checks if the room has a trap door and if it's open.
+     *
+     * @return true if the room has an open trap door, false otherwise.
+     */
+    public boolean hasTrapDoor()
+    {
+        return trapDoor.isOpen();
+    }
+
+    /**
+     * Opens the trap door in the room.
+     */
+    public void openTrapDoor()
+    {
+        trapDoor.open();
+    }
+
+    /**
+     * Closes the trap door in the room.
+     */
+    public void closeTrapDoor()
+    {
+        trapDoor.close();
+    }
+    
+    /**
      * @return The short description of the room
      * (the one that was defined in the constructor).
      */
@@ -54,7 +82,36 @@ public class Room
     {
         return description;
     }
-
+    
+    /**
+     * Checks if the room contains an item.
+     *
+     * @return true if the room contains items, false otherwise.
+     */
+    public boolean hasItem() {
+        return !items.isEmpty();
+    }
+    
+    /**
+     * Checks if the room contains a specific item.
+     *
+     * @param item The item to check for.
+     * @return true if the item is in the room, false otherwise.
+     */
+    public boolean hasItem(Item item) {
+        return items.contains(item);
+    }
+    
+    /**
+     * Removes an item from the room.
+     *
+     * @param item The item to remove.
+     * @return true if the item was successfully removed, false otherwise.
+     */
+    public boolean removeItem(Item item) {
+        return items.remove(item);
+    }
+    
     /**
      * Return a description of the room in the form:
      *     You are in the kitchen.
@@ -90,10 +147,6 @@ public class Room
 
     public List<Item> getItems() {
         return items;
-    }
-
-    public boolean hasItem() {
-        return !items.isEmpty();
     }
     
     /**
