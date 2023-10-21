@@ -1,0 +1,2 @@
+intermediate : added map, ring wooden sword, and toy gun
+advanced : added time limit and trap door
